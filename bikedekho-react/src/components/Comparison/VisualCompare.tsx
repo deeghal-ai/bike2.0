@@ -1,6 +1,5 @@
 import type { BikeData } from '../../types/bike'
 import { Icon } from '../ui/Icon'
-import { Badge } from '../ui/Badge'
 
 interface VisualCompareProps {
   data: BikeData
@@ -37,21 +36,12 @@ export default function VisualCompare({ data }: VisualCompareProps) {
     }))
   ]
 
-  const getBadgeVariant = (type: string) => {
-    switch (type) {
-      case 'positive': return 'positive'
-      case 'warning': return 'warning'
-      case 'info': return 'info'
-      default: return 'muted'
-    }
-  }
-
   return (
     <div className="px-4">
       {/* Horizontal Scroll Carousel */}
       <div className="overflow-x-auto hide-scrollbar -mx-4 px-4">
         <div className="flex gap-3" style={{ width: 'max-content' }}>
-          {allBikes.map((bike, index) => (
+          {allBikes.map((bike) => (
             <div
               key={bike.id}
               className={`w-[160px] flex-shrink-0 rounded-xl border overflow-hidden ${

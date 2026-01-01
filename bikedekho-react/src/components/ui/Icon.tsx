@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react'
+
 interface IconProps {
   name: string
   size?: number
@@ -6,7 +8,7 @@ interface IconProps {
 
 // Simple SVG icon component
 export function Icon({ name, size = 20, className = '' }: IconProps) {
-  const icons: Record<string, JSX.Element> = {
+  const icons: Record<string, ReactElement> = {
     check: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
         <polyline points="20 6 9 17 4 12" />

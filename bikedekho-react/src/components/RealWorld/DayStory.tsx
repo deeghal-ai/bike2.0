@@ -32,11 +32,10 @@ const verdictConfig = {
   }
 }
 
-function TimelineCard({ item, index, isLast, storyVerdict }: { 
+function TimelineCard({ item, index, isLast }: { 
   item: TimelineItem
   index: number
   isLast: boolean
-  storyVerdict: 'dominates' | 'competes' | 'struggles'
 }) {
   const getTimelineColor = () => {
     if (index === 0) return 'bg-gradient-to-b from-indigo-500 to-purple-500'
@@ -239,7 +238,6 @@ export default function DayStory({ data }: DayStoryProps) {
               item={item}
               index={index}
               isLast={index === activeStory.timeline.length - 1}
-              storyVerdict={activeStory.verdict}
             />
           ))}
         </div>

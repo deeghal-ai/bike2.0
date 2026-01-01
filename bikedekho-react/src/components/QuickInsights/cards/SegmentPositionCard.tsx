@@ -15,7 +15,7 @@ interface DimensionItem {
   isBottom?: boolean
 }
 
-export default function SegmentPositionCard({ data }: SegmentPositionCardProps) {
+export default function SegmentPositionCard({ }: SegmentPositionCardProps) {
   const dimensions: DimensionItem[] = [
     { icon: '🛣️', name: 'Touring Comfort', rank: '#1 of 5', label: 'Best in class', isTop: true },
     { icon: '💰', name: 'Value for Money', rank: '#1 of 5', label: 'Best in class', isTop: true },

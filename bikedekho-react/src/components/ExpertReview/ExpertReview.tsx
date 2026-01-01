@@ -10,7 +10,7 @@ interface ExpertReviewProps {
 export default function ExpertReview({ data }: ExpertReviewProps) {
   const [showFullPros, setShowFullPros] = useState(false)
   const [showFullCons, setShowFullCons] = useState(false)
-  const { quotes, basic } = data
+  const { quotes } = data
 
   // Expert review ratings - would come from data in real app
   const expertRating = 3.8

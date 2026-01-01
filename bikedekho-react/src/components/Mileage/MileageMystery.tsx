@@ -35,7 +35,6 @@ export default function MileageMystery({ data }: MileageMysteryProps) {
   // Range calculations
   const cityRange = Math.round(fuelTank * mileageMystery.realRange.min)
   const highwayRange = Math.round(fuelTank * (mileageMystery.realRange.max - 2))
-  const mixedRange = Math.round(fuelTank * currentMileage)
 
   // Rival comparison
   const rivalMileage = currentMileage - 3 // Assume rival is less efficient

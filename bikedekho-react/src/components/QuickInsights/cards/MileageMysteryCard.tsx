@@ -3,7 +3,6 @@ import type { BikeData } from '../../../types/bike'
 import { Card, CardHeader, CardLabel } from '../../ui/Card'
 import { Badge } from '../../ui/Badge'
 import { ProgressBar } from '../../ui/ProgressBar'
-import { Icon } from '../../ui/Icon'
 
 interface MileageMysteryCardProps {
   data: BikeData

@@ -6,11 +6,11 @@ import { Icon } from '../ui/Icon'
 export type TabType = 'overview' | 'price' | 'images' | 'compare' | 'variants'
 
 interface HeaderProps {
-  bikeName: string
+  bikeName?: string
   onTabChange?: (tab: TabType) => void
 }
 
-export default function Header({ bikeName, onTabChange }: HeaderProps) {
+export default function Header({ onTabChange }: HeaderProps) {
   const [activeTab, setActiveTab] = useState<TabType>('overview')
   const [isPersonaExpanded, setIsPersonaExpanded] = useState(true)
 
