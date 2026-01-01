@@ -130,7 +130,41 @@ The platform adapts content based on three user personas:
    - Focus: Highway stability, comfort, fuel tank capacity
    - Priority: Range, comfort, long-distance capabilities
 
+## 🚢 Deployment
+
+### Vercel Deployment
+
+This project is configured to deploy the React app from the `bikedekho-react` subdirectory.
+
+**Important**: The `vercel.json` file is configured to:
+- Build from the `bikedekho-react` directory
+- Output to `bikedekho-react/dist`
+- Use Vite framework settings
+
+#### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Vercel will automatically detect the `vercel.json` configuration
+4. The React app will be deployed (not the legacy HTML files)
+
+Alternatively, you can deploy using the Vercel CLI:
+```bash
+vercel
+```
+
+### Project Structure Note
+
+⚠️ **Important**: This repository contains both:
+- **Modern React App** (in `bikedekho-react/`) - This is what gets deployed
+- **Legacy HTML Files** (in root directory) - These are for reference only
+
+The `vercel.json` ensures that the modern React app is deployed, not the legacy files.
+
 ## 🔧 Configuration
+
+### Vercel Configuration
+Deployment settings are in `vercel.json` at the root level
 
 ### Vite Configuration
 Configuration can be found in `bikedekho-react/vite.config.ts`

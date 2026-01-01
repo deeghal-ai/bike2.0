@@ -93,6 +93,9 @@ Desktop.ini
 
 # Vercel
 .vercel
+.vercel.json.backup
+
+# Note: vercel.json is tracked intentionally for deployment configuration
 
 # Turborepo
 .turbo

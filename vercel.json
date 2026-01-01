@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "cd bikedekho-react && npm install && npm run build",
+  "outputDirectory": "bikedekho-react/dist",
+  "framework": "vite",
+  "installCommand": "cd bikedekho-react && npm install",
+  "devCommand": "cd bikedekho-react && npm run dev",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
