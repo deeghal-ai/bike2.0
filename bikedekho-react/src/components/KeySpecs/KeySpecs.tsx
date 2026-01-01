@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { usePersona } from '../../contexts/PersonaContext'
 import type { BikeData, PersonaType } from '../../types/bike'
 import { Icon } from '../ui/Icon'
+import FullSpecsModal from './FullSpecsModal'
 
 interface KeySpecsProps {
   data: BikeData
@@ -23,6 +25,7 @@ interface SpecCard {
 export default function KeySpecs({ data }: KeySpecsProps) {
   const { currentPersona } = usePersona()
   const { specs } = data
+  const [isSpecsModalOpen, setIsSpecsModalOpen] = useState(false)
 
   const specCards: SpecCard[] = [
     {
@@ -200,10 +203,20 @@ export default function KeySpecs({ data }: KeySpecsProps) {
 
       {/* View All Specs Link */}
       <div className="mt-4 text-center">
-        <button className="text-sm text-blue-600 font-medium hover:underline">
+        <button 
+          onClick={() => setIsSpecsModalOpen(true)}
+          className="text-sm text-blue-600 font-medium hover:underline"
+        >
           View All Specs and Features
         </button>
       </div>
+
+      {/* Full Specs Modal */}
+      <FullSpecsModal
+        isOpen={isSpecsModalOpen}
+        onClose={() => setIsSpecsModalOpen(false)}
+        bikeName={data.basic.name}
+      />
     </section>
   )
 }
