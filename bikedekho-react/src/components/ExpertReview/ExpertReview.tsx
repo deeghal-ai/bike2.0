@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { BikeData } from '../../types/bike'
 import { Icon } from '../ui/Icon'
 import SurprisingInsights from './SurprisingInsights'
+import { RideFeel } from '../RideFeel'
 
 interface ExpertReviewProps {
   data: BikeData
@@ -163,6 +164,12 @@ export default function ExpertReview({ data }: ExpertReviewProps) {
 
       {/* Surprising Insights - Integrated */}
       <SurprisingInsights data={data} />
+
+      {/* Divider */}
+      <div className="h-2 bg-gray-100" />
+
+      {/* Ride Feel Section */}
+      <RideFeel data={data} />
     </section>
   )
 }

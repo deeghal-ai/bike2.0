@@ -335,6 +335,18 @@ export interface TypicalDayScenario {
   }
 }
 
+export interface RideFeelItem {
+  icon: string
+  title: string
+  description: string
+  sentiment: 'positive' | 'warning' | 'neutral'
+}
+
+export interface RideFeelData {
+  soloRider: RideFeelItem[]
+  withPillion: RideFeelItem[]
+}
+
 export interface BasicInfo {
   id: string
   name: string
@@ -367,6 +379,7 @@ export interface BikeData {
   verdict: Verdict
   typicalDayScenarios: TypicalDayScenario[]
   dayStories: DayStory[]
+  rideFeel: RideFeelData
 }
 
 export type PersonaType = 'weekend' | 'commuter' | 'value' | 'enthusiast'

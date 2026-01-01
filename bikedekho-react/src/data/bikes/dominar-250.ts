@@ -857,6 +857,79 @@ export const dominar250Data: BikeData = {
         worstMoment: 'Monday morning parking exit'
       }
     }
-  ]
+  ],
+
+  rideFeel: {
+    soloRider: [
+      {
+        icon: '✓',
+        title: 'Heat Management',
+        description: 'Liquid cooling = minimal heat. Better than air-cooled 250s.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '⚠',
+        title: 'Wind Protection',
+        description: 'Adequate below 100 kmph. Buffeting starts above.',
+        sentiment: 'warning'
+      },
+      {
+        icon: '✓',
+        title: 'Seating Position',
+        description: 'Upright, relaxed. 13-hour days are possible.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '✓',
+        title: 'Exhaust Note',
+        description: 'Deep, pleasing, not obnoxious.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '✓',
+        title: 'Vibrations',
+        description: 'Almost negligible at highway speeds.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '⚠',
+        title: 'Weight Feel',
+        description: 'Moving: Planted. Stationary: Heavy, requires muscle.',
+        sentiment: 'warning'
+      }
+    ],
+    withPillion: [
+      {
+        icon: '✓',
+        title: 'Short Rides (<100km)',
+        description: 'Better comfort than competitors. Good grabrails.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '⚠',
+        title: 'Long Rides (200km+)',
+        description: 'Seat becomes hard after 2-3 hours.',
+        sentiment: 'warning'
+      },
+      {
+        icon: '⚠',
+        title: 'Luggage Trade-off',
+        description: 'Luggage vs Pillion = Planning needed.',
+        sentiment: 'warning'
+      },
+      {
+        icon: '✓',
+        title: 'Touring Reality',
+        description: 'Many successful 2-up tours documented.',
+        sentiment: 'positive'
+      },
+      {
+        icon: '⚠',
+        title: 'Mileage Impact',
+        description: 'Range drops to 35-38 kmpl 2-up.',
+        sentiment: 'warning'
+      }
+    ]
+  }
 }
 
