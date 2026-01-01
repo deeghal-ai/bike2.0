@@ -1,0 +1,215 @@
+/* ============================================
+   OWNER CONSENSUS SECTION STYLES
+   ============================================
+   Aggregated owner wisdom
+   ============================================ */
+
+.consensus-section {
+  padding: var(--space-6) 0;
+  background: var(--surface-page);
+}
+
+.consensus-header {
+  padding: 0 var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.consensus-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.consensus-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Consensus Content */
+.consensus-content {
+  padding: 0 var(--space-4);
+}
+
+/* Agreement Items */
+.consensus-agreements {
+  margin-bottom: var(--space-6);
+}
+
+.consensus-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-md);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.consensus-section-title svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary-500);
+}
+
+.agreement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.agreement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+.agreement-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agreement-item.positive .agreement-icon {
+  color: var(--color-positive);
+}
+
+.agreement-item.neutral .agreement-icon {
+  color: var(--color-warning);
+}
+
+.agreement-item.negative .agreement-icon {
+  color: var(--color-negative);
+}
+
+.agreement-content {
+  flex: 1;
+}
+
+.agreement-point {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.agreement-detail {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Divided Opinions */
+.consensus-divided {
+  margin-bottom: var(--space-6);
+}
+
+.divided-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.divided-item {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.divided-point {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.divided-sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.divided-side {
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+}
+
+.divided-side.for {
+  background: var(--color-positive-bg);
+}
+
+.divided-side.against {
+  background: var(--color-negative-bg);
+}
+
+.divided-side-label {
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.divided-side.for .divided-side-label {
+  color: var(--color-positive);
+}
+
+.divided-side.against .divided-side-label {
+  color: var(--color-negative);
+}
+
+.divided-side-text {
+  color: var(--text-secondary);
+}
+
+.divided-ratio {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-default);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Surprises */
+.consensus-surprises {
+  margin-bottom: var(--space-4);
+}
+
+.surprises-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.surprise-item {
+  background: var(--color-warning-bg);
+  border-left: 4px solid var(--color-warning);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.surprise-expected {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.surprise-expected::before {
+  content: '💭 Expected: ';
+  font-weight: var(--font-medium);
+}
+
+.surprise-reality {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-positive);
+}
+
+.surprise-reality::before {
+  content: '✓ Reality: ';
+}

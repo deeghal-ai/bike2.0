@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bajaj Dominar 250 - Complete Insights (All 12 Cards)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-expanded {
+            animation: expandCard 0.3s ease-out;
+        }
+        @keyframes expandCard {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .persona-btn {
+            transition: all 0.3s ease;
+        }
+        .persona-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-white">
+    <!-- Hero -->
+    <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djZoLTZ2LTZoNnptMCAyNHY2aC02di02aDZ6bS0yNCAwaC02djZoNnYtNnptMC0yNGgtNnY2aDZ2LTZ6Ii8+PC9nPjwvZz48L3N2Zz4=');"></div>
+        
+        <!-- Bike image - Try multiple sources with fallback -->
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <img id="bike-hero-image" 
+                 src="https://bd.gaadicdn.com/processedimages/bajaj/dominar-250/source/dominar-2506613f66c36196.jpg" 
+                 alt="Bajaj Dominar 250" 
+                 class="h-full w-auto object-contain opacity-50 md:opacity-70 transition-opacity duration-500"
+                 onload="this.style.opacity='0.7'"
+                 onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='block';">
+            <!-- Fallback icon if image fails -->
+            <div id="fallback-icon" style="display:none;" class="text-slate-600">
+                <svg class="w-32 h-32 md:w-48 md:h-48 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Content overlay with better gradient -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/40">
+            <div class="mb-4 px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full shadow-lg">Featured</div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-2xl">Bajaj Dominar 250</h1>
+            <p class="text-slate-200 text-sm md:text-lg mb-6 max-w-2xl">250cc tourer • Premium features • Best-in-segment value</p>
+            <div class="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl mb-2">₹1.6L - ₹1.85L</div>
+            <p class="text-slate-300 text-xs md:text-sm">*Ex-showroom price in New Delhi</p>
+        </div>
+    </div>
+
+    <!-- Persona Selection (Sticky) -->
+    <div class="sticky top-0 z-40 bg-white border-b shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <p class="text-sm text-slate-600 mb-3">Who are you?</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <button onclick="selectPersona('weekend')" id="persona-weekend" class="persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-orange-500 bg-orange-50 text-orange-900">
+                    <span class="text-lg">🏍️</span>
+                    <span class="text-xs md:text-sm font-medium">Weekend Warrior</span>
+                </button>
+                <button onclick="selectPersona('commuter')" id="persona-commuter" class="persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-slate-200 text-slate-700">
+                    <span class="text-lg">🏙️</span>
+                    <span class="text-xs md:text-sm font-medium">Daily Commuter</span>
+                </button>
+                <button onclick="selectPersona('value')" id="persona-value" class="persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-slate-200 text-slate-700">
+                    <span class="text-lg">💰</span>
+                    <span class="text-xs md:text-sm font-medium">Value Hunter</span>
+                </button>
+                <button onclick="selectPersona('enthusiast')" id="persona-enthusiast" class="persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-slate-200 text-slate-700">
+                    <span class="text-lg">⚡</span>
+                    <span class="text-xs md:text-sm font-medium">Enthusiast</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-6 space-y-4">
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-slate-900 mb-1">Instant Insights</h2>
+            <p class="text-slate-500 text-sm">All 12 cards - Swipe through to know this bike completely</p>
+        </div>
+
+        <!-- CARD 1: Who Actually Rides This -->
+        <div class="overflow-hidden border-2 border-orange-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-4 cursor-pointer" onclick="toggleCard('1')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-orange-500 rounded-lg"><span class="text-white text-xl">👥</span></div>
+                        <h3 class="text-lg font-bold">Card 1: Who Actually Rides This</h3>
+                    </div>
+                    <svg id="chevron-1" class="h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-1" class="p-6 card-expanded">
+                <p class="text-sm text-slate-600 mb-4">From 850+ owner profiles:</p>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium">Highway Tourers</span>
+                            <span class="text-sm font-bold text-orange-600">70%</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full"><div class="h-full bg-orange-500 rounded-full" style="width: 70%"></div></div>
+                        <p class="text-xs text-slate-500 mt-1">Frequent 200-500km weekend rides</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium">Daily Commuters</span>
+                            <span class="text-sm font-bold text-slate-600">30%</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full"><div class="h-full bg-slate-500 rounded-full" style="width: 30%"></div></div>
+                        <p class="text-xs text-slate-500 mt-1">25-65km office runs</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                    <p class="text-sm text-blue-900 italic">"Owners specifically choose this for long-distance capability over pure city use"</p>
+                </div>
+                <!-- Persona matches -->
+                <div id="match-weekend" class="bg-green-50 border-2 border-green-500 rounded-lg p-4 mt-4">
+                    <p class="font-semibold text-green-900 mb-1">🎯 You're a Weekend Warrior</p>
+                    <p class="text-sm text-green-800">This bike was built for you. 92% match.</p>
+                </div>
+                <div id="match-commuter" class="bg-yellow-50 border-2 border-yellow-500 rounded-lg p-4 mt-4 hidden">
+                    <p class="font-semibold text-yellow-900 mb-1">⚠️ You're a Daily Commuter</p>
+                    <p class="text-sm text-yellow-800">This bike tolerates city, excels on weekends. 58% match.</p>
+                </div>
+                <div id="match-value" class="bg-purple-50 border-2 border-purple-500 rounded-lg p-4 mt-4 hidden">
+                    <p class="font-semibold text-purple-900 mb-1">💰 You're a Value Hunter</p>
+                    <p class="text-sm text-purple-800">Best value in segment. Premium features at budget price. 88% match.</p>
+                </div>
+                <div id="match-enthusiast" class="bg-red-50 border-2 border-red-500 rounded-lg p-4 mt-4 hidden">
+                    <p class="font-semibold text-red-900 mb-1">⚡ You're an Enthusiast</p>
+                    <p class="text-sm text-red-800">Good power, but heavier than rivals. 65% match.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2: A Day On This Bike -->
+        <div class="overflow-hidden border-2 border-blue-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 cursor-pointer" onclick="toggleCard('2')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-blue-500 rounded-lg"><span class="text-white text-xl">📅</span></div>
+                        <h3 class="text-lg font-bold" id="card2-title">Card 2: Your Saturday on This Bike</h3>
+                    </div>
+                    <svg id="chevron-2" class="h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-2" class="p-6 card-expanded">
+                <div id="day-weekend">
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">6AM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">📍 Ladakh Highway, KM 180</p>
+                                <div class="text-sm space-y-1">
+                                    <p>✅ Rock-solid at 90 kmph</p>
+                                    <p>✅ No lower back pain (4 hours in)</p>
+                                    <p>⚠️ Wind buffeting above 100 kmph</p>
+                                </div>
+                                <p class="text-xs text-slate-600 italic mt-2 bg-slate-50 p-2 rounded">"Windshield adequate but not great"</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">12PM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">⛽ Lunch Stop</p>
+                                <div class="text-sm space-y-1">
+                                    <p>✅ 180km done, 320km left in tank</p>
+                                    <p>✅ 40+ kmpl at 80-90 kmph</p>
+                                </div>
+                                <p class="text-xs text-slate-600 italic mt-2 bg-slate-50 p-2 rounded">"500km range routine"</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">5PM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">🏔️ Mountain Twisties</p>
+                                <div class="text-sm space-y-1">
+                                    <p>✅ Corners better than expected</p>
+                                    <p>⚠️ Weight noticeable in hairpins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">9PM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">🅿️ Hotel Parking</p>
+                                <p class="text-sm">⚠️ 180kg = Effort to maneuver</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="selectPersona('commuter')" class="w-full mt-4 px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition flex items-center justify-center gap-2">
+                        <span>Switch to: City commute day</span>
+                        <span>→</span>
+                    </button>
+                </div>
+                <div id="day-commuter" class="hidden">
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">8AM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">🚦 Dense Traffic, Andheri</p>
+                                <div class="text-sm space-y-1">
+                                    <p>⚠️ Handlebar flip-flops at slow speeds</p>
+                                    <p>⚠️ 180kg feels heavy</p>
+                                    <p>✅ Tractable engine, 3rd gear at 30 kmph</p>
+                                </div>
+                                <p class="text-xs text-slate-600 italic mt-2 bg-slate-50 p-2 rounded">"Front-heavy steering is city's weak point"</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">9AM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">🛣️ Expressway Stretch</p>
+                                <div class="text-sm space-y-1">
+                                    <p>✅ This is where it wakes up</p>
+                                    <p>✅ Planted, stable</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">6:30PM</div>
+                            <div class="flex-1">
+                                <p class="font-semibold mb-2">🅿️ Office Parking</p>
+                                <div class="text-sm space-y-1">
+                                    <p>✗ Takes effort to maneuver</p>
+                                    <p>✗ Shorter riders struggle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mt-4">
+                        <p class="font-semibold text-orange-900 mb-1">💰 Monthly Reality</p>
+                        <p class="text-sm">30-35 kmpl (aggressive) / 43-45 kmpl (controlled)</p>
+                    </div>
+                    <button onclick="selectPersona('weekend')" class="w-full mt-4 px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition flex items-center justify-center gap-2">
+                        <span>Switch to: Weekend tour day</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3: Mileage Mystery -->
+        <div class="overflow-hidden border-2 border-green-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-green-50 to-green-100 p-4 cursor-pointer" onclick="toggleCard('3')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-green-500 rounded-lg"><span class="text-white text-xl">⛽</span></div>
+                        <h3 class="text-lg font-bold">Card 3: The Mileage Mystery Solved</h3>
+                    </div>
+                    <svg id="chevron-3" class="h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-3" class="p-6 card-expanded">
+                <div class="text-center py-3 bg-slate-100 rounded-lg mb-4">
+                    <p class="text-xs text-slate-600">Claimed by Bajaj</p>
+                    <p class="text-3xl font-bold">42 kmpl</p>
+                </div>
+                <p class="text-center text-sm font-semibold mb-4">Owner Reality: It depends</p>
+                <div class="space-y-3">
+                    <div class="border-l-4 border-red-500 pl-4 py-3 bg-red-50 rounded-r">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-semibold">🏙️ City Aggressive</span>
+                            <span class="text-xl font-bold text-red-600">30-35 kmpl</span>
+                        </div>
+                        <p class="text-xs">Quick throttle, frequent braking</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-500 pl-4 py-3 bg-yellow-50 rounded-r">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-semibold">🏙️ City Controlled</span>
+                            <span class="text-xl font-bold text-yellow-600">43-45 kmpl</span>
+                        </div>
+                        <p class="text-xs">Gentle throttle, higher gears</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4 py-3 bg-green-50 rounded-r">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-semibold">🛣️ Highway Sweet Spot</span>
+                            <span class="text-xl font-bold text-green-600">40-42 kmpl</span>
+                        </div>
+                        <p class="text-xs">80-90 kmph cruise</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4 py-3 bg-blue-50 rounded-r">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-semibold">🛣️ Highway Spirited</span>
+                            <span class="text-xl font-bold text-blue-600">35-38 kmpl</span>
+                        </div>
+                        <p class="text-xs">100+ kmph, wind resistance</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                    <p class="text-sm font-semibold text-blue-900 mb-1">💡 The Truth</p>
+                    <p class="text-sm text-blue-800 italic">"Same bike, 13 kmpl spread depending on riding style"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4: What Riders Add -->
+        <div class="overflow-hidden border-2 border-purple-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-4 cursor-pointer" onclick="toggleCard('4')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-purple-500 rounded-lg"><span class="text-white text-xl">🔧</span></div>
+                        <h3 class="text-lg font-bold">Card 4: What Riders Add (And Why)</h3>
+                    </div>
+                    <svg id="chevron-4" class="h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-4" class="p-6 card-expanded">
+                <div class="space-y-3">
+                    <div class="flex gap-3 p-3 bg-slate-50 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center flex-shrink-0">#1</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-semibold">🔩 Handlebar Risers</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">68%</span>
+                            </div>
+                            <p class="text-xs italic text-slate-600">"Stock bars too low, risers reduce wrist strain"</p>
+                            <p class="text-xs text-green-600 font-semibold mt-1">₹1,500-2,500</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 p-3 bg-slate-50 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center flex-shrink-0">#2</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-semibold">🪑 Extra Seat Padding</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">54%</span>
+                            </div>
+                            <p class="text-xs italic text-slate-600">"Seat gets hard after 200km"</p>
+                            <p class="text-xs text-green-600 font-semibold mt-1">₹800-1,500</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 p-3 bg-slate-50 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center flex-shrink-0">#3</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-semibold">🎒 Rhinox Luggage</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">47%</span>
+                            </div>
+                            <p class="text-xs italic text-slate-600">"Tank + tail system, no panniers needed"</p>
+                            <p class="text-xs text-green-600 font-semibold mt-1">₹3,500-5,000</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 p-3 bg-slate-50 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center flex-shrink-0">#4</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-semibold">🛡️ Crash Guards</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">41%</span>
+                            </div>
+                            <p class="text-xs italic text-slate-600">"Protecting ₹1.8L on tour falls"</p>
+                            <p class="text-xs text-green-600 font-semibold mt-1">₹2,500-4,000</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 p-3 bg-slate-50 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center flex-shrink-0">#5</div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-semibold">📱 Phone Mount</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">38%</span>
+                            </div>
+                            <p class="text-xs italic text-slate-600">"Navigation essential for tours"</p>
+                            <p class="text-xs text-green-600 font-semibold mt-1">₹1,200-2,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-4">
+                    <p class="text-sm font-semibold text-purple-900 mb-1">💡 The Pattern</p>
+                    <p class="text-sm text-purple-800">Most mods are touring-focused (comfort + utility), not performance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5: First 5000km Truth -->
+        <div class="overflow-hidden border-2 border-indigo-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 p-4 cursor-pointer" onclick="toggleCard('5')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-indigo-500 rounded-lg"><span class="text-white text-xl">📈</span></div>
+                        <h3 class="text-lg font-bold">Card 5: The First 5000km Truth</h3>
+                    </div>
+                    <svg id="chevron-5" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-5" class="p-6 hidden">
+                <div class="space-y-4">
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <p class="font-bold mb-2">First 1000km: "What did I buy?"</p>
+                        <p class="text-sm">⚠️ Suspension: Agonizingly stiff</p>
+                        <p class="text-sm">⚠️ Engine: Tight, not free-revving</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <p class="font-bold mb-2">1000-3000km: "Oh, improving"</p>
+                        <p class="text-sm">✅ Suspension becoming compliant</p>
+                        <p class="text-sm">✅ Engine feeling smooth</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <p class="font-bold mb-2">3000-5000km: "Now I get it"</p>
+                        <p class="text-sm">✅ Suspension comfortable</p>
+                        <p class="text-sm">✅ Engine smooth, talky above 5k rpm</p>
+                    </div>
+                    <div class="bg-orange-50 border-2 border-orange-300 rounded-lg p-4">
+                        <p class="font-bold text-orange-900 mb-2">💥 The 5000km Gotcha</p>
+                        <p class="text-sm">⚠️ Front brake pads almost done (₹800-1,200)</p>
+                        <p class="text-sm">⚠️ Chain showing wear (₹2,500-3,500)</p>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p class="font-bold text-blue-900 mb-1">10,000km: "Trouble-free"</p>
+                        <p class="text-sm text-blue-800">"King of build quality in category"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 6: Riding Position Reality -->
+        <div class="overflow-hidden border-2 border-teal-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-teal-50 to-teal-100 p-4 cursor-pointer" onclick="toggleCard('6')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-teal-500 rounded-lg"><span class="text-white text-xl">🏍️</span></div>
+                        <h3 class="text-lg font-bold">Card 6: Riding Position Reality</h3>
+                    </div>
+                    <svg id="chevron-6" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-6" class="p-6 hidden">
+                <div class="space-y-3">
+                    <div class="border-l-4 border-blue-400 pl-3 py-2">
+                        <p class="font-bold mb-1">🌡️ Heat & Engine Warmth</p>
+                        <p class="text-sm">✅ Liquid cooling = minimal heat</p>
+                        <p class="text-xs text-slate-600 mt-1">Better than: Air-cooled 250s</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-3 py-2">
+                        <p class="font-bold mb-1">💨 Wind Protection</p>
+                        <p class="text-sm">⚠️ Adequate below 100 kmph</p>
+                        <p class="text-sm">⚠️ Buffeting above 100 kmph</p>
+                    </div>
+                    <div class="border-l-4 border-green-400 pl-3 py-2">
+                        <p class="font-bold mb-1">🪑 Seating & Ergonomics</p>
+                        <p class="text-sm">✅ Upright, relaxed position</p>
+                        <p class="text-sm">✅ 13-hour days possible</p>
+                    </div>
+                    <div class="border-l-4 border-purple-400 pl-3 py-2">
+                        <p class="font-bold mb-1">🔊 Exhaust Note</p>
+                        <p class="text-sm">✅ Deep, pleasing, not obnoxious</p>
+                    </div>
+                    <div class="border-l-4 border-orange-400 pl-3 py-2">
+                        <p class="font-bold mb-1">🏋️ Weight Feel</p>
+                        <p class="text-sm">✅ Moving: Planted, stable</p>
+                        <p class="text-sm">⚠️ Stationary: Heavy, requires muscle</p>
+                    </div>
+                    <div class="border-l-4 border-indigo-400 pl-3 py-2">
+                        <p class="font-bold mb-1">🎚️ Vibrations</p>
+                        <p class="text-sm">✅ Almost negligible at highway speeds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 7: Pillion Reality -->
+        <div class="overflow-hidden border-2 border-pink-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-pink-50 to-pink-100 p-4 cursor-pointer" onclick="toggleCard('7')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-pink-500 rounded-lg"><span class="text-white text-xl">👥</span></div>
+                        <h3 class="text-lg font-bold">Card 7: Your Partner's Reality</h3>
+                    </div>
+                    <svg id="chevron-7" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-7" class="p-6 hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-green-900 mb-2">Short Rides (&lt;100km)</p>
+                    <p class="text-sm">✅ Better comfort than competitors</p>
+                    <p class="text-sm">✅ Adequate seat padding</p>
+                    <p class="text-sm">✅ Good grabrails</p>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-yellow-900 mb-2">Long Rides (200km+)</p>
+                    <p class="text-sm">⚠️ Seat becomes hard after 2-3 hours</p>
+                    <p class="text-sm">⚠️ Luggage vs Pillion = Planning needed</p>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="font-bold text-blue-900 mb-2">Touring Reality</p>
+                    <p class="text-sm">✅ Many successful 2-up tours</p>
+                    <p class="text-sm">⚠️ Range drops (35-38 kmpl 2-up)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 8: Unexpected Truths -->
+        <div class="overflow-hidden border-2 border-yellow-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-4 cursor-pointer" onclick="toggleCard('8')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-yellow-500 rounded-lg"><span class="text-white text-xl">💡</span></div>
+                        <h3 class="text-lg font-bold">Card 8: 3 Things That Surprised Owners</h3>
+                    </div>
+                    <svg id="chevron-8" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-8" class="p-6 hidden">
+                <div class="space-y-4">
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <p class="font-bold mb-2">⚡ Surprise #1: Cornering Ability</p>
+                        <p class="text-sm text-slate-700">Expected: "180kg = slow corners"</p>
+                        <p class="text-sm text-green-700">Reality: "Handles better than expected"</p>
+                        <p class="text-xs text-slate-600 italic mt-2 bg-yellow-50 p-2 rounded">"19-inch wheel + longer wheelbase actually improve handling"</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <p class="font-bold mb-2">⛽ Surprise #2: Fuel Sipping</p>
+                        <p class="text-sm text-slate-700">Expected: "Decent mileage"</p>
+                        <p class="text-sm text-green-700">Reality: "Rivals 150cc commuters"</p>
+                        <p class="text-xs text-slate-600 italic mt-2 bg-green-50 p-2 rounded">"35-47 kmpl rivals smaller displacement bikes"</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <p class="font-bold mb-2">📉 Surprise #3: Downgrade Appeal</p>
+                        <p class="text-sm text-slate-700">Expected: "Buyers upgrade to bigger"</p>
+                        <p class="text-sm text-blue-700">Reality: "Many downgrade FROM bigger bikes"</p>
+                        <p class="text-xs text-slate-600 mt-2">• KTM 390 Duke → Dominar 250</p>
+                        <p class="text-xs text-slate-600">• RE 650 → Dominar 250</p>
+                        <p class="text-xs text-blue-900 italic mt-2 bg-blue-50 p-2 rounded">"Reliability + economy win over raw performance"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 9: Owner vs Expert Divide -->
+        <div class="overflow-hidden border-2 border-rose-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-rose-50 to-rose-100 p-4 cursor-pointer" onclick="toggleCard('9')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-rose-500 rounded-lg"><span class="text-white text-xl">👥📝</span></div>
+                        <h3 class="text-lg font-bold">Card 9: Owner vs Expert Divide</h3>
+                    </div>
+                    <svg id="chevron-9" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-9" class="p-6 hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                    <p class="font-bold text-green-900 mb-2">🤝 Where They AGREE</p>
+                    <p class="text-sm">✅ Engine refinement best-in-class</p>
+                    <p class="text-sm">✅ Touring comfort unmatched</p>
+                    <p class="text-sm">✅ Value for money exceptional</p>
+                    <p class="text-sm">✅ 180kg weight = double-edged sword</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-orange-900 mb-2">⚠️ Where They DISAGREE</p>
+                    <p class="text-sm font-semibold mb-1">Topic: Suspension Quality</p>
+                    <div class="text-sm space-y-2">
+                        <div>
+                            <p class="font-medium">👥 Owners (850 reviews):</p>
+                            <p class="text-xs italic">"Stiff initially, comfortable after 2000km break-in"</p>
+                            <p class="text-xs">Rating: 3.5/5 ⭐</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">📝 Experts (BikeWale, PowerDrift):</p>
+                            <p class="text-xs italic">"Firm but well-damped, suits highway"</p>
+                            <p class="text-xs">Rating: 3/5 ⭐</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-orange-900 font-semibold mt-2">💡 The Truth: Break-in period matters</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                    <p class="text-sm font-semibold mb-1">Topic: City Usability</p>
+                    <div class="text-sm space-y-2">
+                        <div>
+                            <p class="font-medium">👥 Owners:</p>
+                            <p class="text-xs italic">"Tolerable but not ideal - buy for weekends"</p>
+                            <p class="text-xs">Rating: 2.5/5 ⭐</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">📝 Experts:</p>
+                            <p class="text-xs italic">"Unwieldy at low speeds, not recommended for pure city"</p>
+                            <p class="text-xs">Rating: 2/5 ⭐</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-red-900 font-semibold mt-2">💡 The Truth: Both agree city is weakness</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 10: Scenario Battleground -->
+        <div class="overflow-hidden border-2 border-cyan-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-cyan-50 to-cyan-100 p-4 cursor-pointer" onclick="toggleCard('10')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-cyan-500 rounded-lg"><span class="text-white text-xl">⚔️</span></div>
+                        <h3 class="text-lg font-bold">Card 10: Scenario Battleground</h3>
+                    </div>
+                    <svg id="chevron-10" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-10" class="p-6 hidden">
+                <div class="bg-green-50 border-2 border-green-500 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-green-900 mb-2">🏆 DOMINATES</p>
+                    <div class="text-sm space-y-2">
+                        <div>
+                            <p class="font-semibold">🛣️ NH48 at 3:00 AM (Empty highway)</p>
+                            <p class="text-xs text-slate-600">Rock-solid stability, 500km range, zero fatigue</p>
+                            <p class="text-xs text-green-700">Better than: Everything in segment</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">🏔️ Manali-Leh Highway</p>
+                            <p class="text-xs text-slate-600">Touring-focused, luggage options, reliable</p>
+                            <p class="text-xs text-green-700">Better than: Gixxer 250, Duke 250</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 border-2 border-yellow-500 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-yellow-900 mb-2">⚖️ COMPETITIVE</p>
+                    <div class="text-sm space-y-2">
+                        <div>
+                            <p class="font-semibold">🌄 Ghat Roads (Twisty mountains)</p>
+                            <p class="text-xs text-slate-600">Good cornering despite weight</p>
+                            <p class="text-xs text-yellow-700">Comparable: V-Strom SX</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">🏙️ Outer Ring Road</p>
+                            <p class="text-xs text-slate-600">Good stability, adequate power</p>
+                            <p class="text-xs text-yellow-700">Comparable: All 250cc rivals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-red-50 border-2 border-red-500 rounded-lg p-4">
+                    <p class="font-bold text-red-900 mb-2">⚠️ STRUGGLES</p>
+                    <div class="text-sm space-y-2">
+                        <div>
+                            <p class="font-semibold">🚦 Traffic jam (Bandra-Worli)</p>
+                            <p class="text-xs text-slate-600">Heavy, handlebar flops, poor maneuverability</p>
+                            <p class="text-xs text-red-700">Worse than: Lighter commuters</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">🅿️ Tight parking</p>
+                            <p class="text-xs text-slate-600">180kg requires muscle, backing in is effort</p>
+                            <p class="text-xs text-red-700">Worse than: Everything lighter</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">🏁 Track day / Aggressive riding</p>
+                            <p class="text-xs text-slate-600">Weight penalty, brakes lack power</p>
+                            <p class="text-xs text-red-700">Worse than: Duke 250, Gixxer SF</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 11: Hidden Ownership Costs -->
+        <div class="overflow-hidden border-2 border-emerald-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-emerald-50 to-emerald-100 p-4 cursor-pointer" onclick="toggleCard('11')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-emerald-500 rounded-lg"><span class="text-white text-xl">💸</span></div>
+                        <h3 class="text-lg font-bold">Card 11: Hidden Ownership Costs</h3>
+                    </div>
+                    <svg id="chevron-11" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-11" class="p-6 hidden">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-blue-900 mb-2">💰 Predictable Costs</p>
+                    <div class="text-sm space-y-1">
+                        <p>Fuel (1200km/month @ 38kmpl): ₹3,700/month</p>
+                        <p>Service (every 5000km): ₹850/month avg</p>
+                        <p>Insurance: ₹625/month</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-3">
+                    <p class="font-bold text-orange-900 mb-2">⚠️ Hidden Costs (First 10,000km)</p>
+                    <div class="text-sm space-y-1">
+                        <p>Front brake pads (every 5-6k km): ₹2,000</p>
+                        <p>Chain set (~12k km): ₹2,500-3,500</p>
+                        <p>Common mods (optional): ₹11,200</p>
+                        <p class="text-xs text-slate-600 mt-2">• Handlebar risers: ₹2,000</p>
+                        <p class="text-xs text-slate-600">• Seat padding: ₹1,200</p>
+                        <p class="text-xs text-slate-600">• Crash guards: ₹3,500</p>
+                        <p class="text-xs text-slate-600">• Luggage: ₹4,500</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                    <p class="font-bold text-slate-900 mb-2">📊 Total First-Year Ownership</p>
+                    <div class="text-sm space-y-1">
+                        <p>On-road price: ₹1,95,000</p>
+                        <p>Fuel (14,400km): ₹44,400</p>
+                        <p>Service (3 visits): ₹9,000</p>
+                        <p>Insurance: ₹7,500</p>
+                        <p>Hidden costs: ₹2,000</p>
+                        <p>Mods (if touring): ₹11,200</p>
+                        <p class="font-bold border-t border-slate-300 pt-2 mt-2">Total: ₹2,69,100</p>
+                        <p class="text-xs text-slate-600">Per month avg: ₹22,425 (including EMI)</p>
+                    </div>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3 mt-3">
+                    <p class="text-sm text-green-900">💡 <strong>The Upside:</strong> After first year, costs drop significantly. Many owners report 10k+ km trouble-free.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 12: Rival Decision Matrix -->
+        <div class="overflow-hidden border-2 border-violet-200 rounded-lg shadow-lg">
+            <div class="bg-gradient-to-r from-violet-50 to-violet-100 p-4 cursor-pointer" onclick="toggleCard('12')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-violet-500 rounded-lg"><span class="text-white text-xl">🎯</span></div>
+                        <h3 class="text-lg font-bold">Card 12: Rival Decision Matrix</h3>
+                    </div>
+                    <svg id="chevron-12" class="h-5 w-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+            <div id="content-12" class="p-6 hidden">
+                <div class="space-y-3">
+                    <div class="bg-orange-50 border-2 border-orange-500 rounded-lg p-4">
+                        <p class="font-bold text-orange-900 mb-2">Choose DOMINAR 250 if:</p>
+                        <div class="text-sm space-y-1">
+                            <p>✅ 70%+ riding is highways/tours</p>
+                            <p>✅ Value matters - premium at budget</p>
+                            <p>✅ Comfort over 200km+ priority</p>
+                            <p>✅ Reliability > Brand badge</p>
+                            <p>✅ Okay tolerating city weight</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-300 rounded-lg p-4">
+                        <p class="font-bold text-blue-900 mb-2">Choose GIXXER 250 if:</p>
+                        <div class="text-sm space-y-1">
+                            <p>✅ 50%+ riding is city commuting</p>
+                            <p>✅ Want lighter, flickable bike</p>
+                            <p>✅ Parking maneuverability matters</p>
+                            <p>✅ Prefer sportier styling</p>
+                            <p>⚠️ Less touring comfort</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 border border-green-300 rounded-lg p-4">
+                        <p class="font-bold text-green-900 mb-2">Choose V-STROM SX if:</p>
+                        <div class="text-sm space-y-1">
+                            <p>✅ ADV styling + upright ergonomics</p>
+                            <p>✅ Fuel efficiency top priority (45kmpl)</p>
+                            <p>✅ Better windshield for highways</p>
+                            <p>✅ Smooth engine over low-end punch</p>
+                            <p>⚠️ Stiff suspension, service issues</p>
+                        </div>
+                    </div>
+                    <div class="bg-red-50 border border-red-300 rounded-lg p-4">
+                        <p class="font-bold text-red-900 mb-2">Choose KTM 250 DUKE if:</p>
+                        <div class="text-sm space-y-1">
+                            <p>✅ Want most power (30 bhp)</p>
+                            <p>✅ Aggressive riding/track days</p>
+                            <p>✅ Brand badge & styling priorities</p>
+                            <p>✅ Willing to pay ₹60k premium</p>
+                            <p>⚠️ Less comfortable for touring</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-violet-50 to-violet-100 border-2 border-violet-300 rounded-lg p-4 mt-4">
+                    <p class="font-bold text-violet-900 mb-2">💡 The Honest Truth</p>
+                    <p class="text-sm text-violet-800">Dominar 250 is the best TOURER in 250cc. It's NOT the best city bike, or fastest, or most prestigious. But for weekend warriors who commute 5 days to tour 2 days, nothing beats it for value.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation dots -->
+        <div class="flex justify-center gap-2 py-6 flex-wrap">
+            <div id="dot-1" class="h-2 w-8 rounded-full bg-orange-500"></div>
+            <div id="dot-2" class="h-2 w-8 rounded-full bg-orange-500"></div>
+            <div id="dot-3" class="h-2 w-8 rounded-full bg-orange-500"></div>
+            <div id="dot-4" class="h-2 w-8 rounded-full bg-orange-500"></div>
+            <div id="dot-5" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-6" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-7" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-8" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-9" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-10" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-11" class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div id="dot-12" class="h-2 w-2 rounded-full bg-slate-300"></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-center text-white">
+            <h3 class="text-xl font-bold mb-2">Ready to Explore More?</h3>
+            <p class="text-sm text-orange-100 mb-4">Get complete details, expert reviews, and compare with rivals</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button class="px-6 py-3 bg-white text-orange-600 rounded-lg hover:bg-orange-50 font-semibold">View Full Comparison</button>
+                <button class="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 font-semibold">Check On-Road Price</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPersona = 'weekend';
+        let expandedCards = new Set(['1', '2', '3', '4']);
+
+        function toggleCard(cardId) {
+            const content = document.getElementById('content-' + cardId);
+            const chevron = document.getElementById('chevron-' + cardId);
+            const dot = document.getElementById('dot-' + cardId);
+            
+            if (expandedCards.has(cardId)) {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+                expandedCards.delete(cardId);
+                if (dot) {
+                    dot.classList.remove('w-8', 'bg-orange-500');
+                    dot.classList.add('w-2', 'bg-slate-300');
+                }
+            } else {
+                content.classList.remove('hidden');
+                content.classList.add('card-expanded');
+                chevron.style.transform = 'rotate(0deg)';
+                expandedCards.add(cardId);
+                if (dot) {
+                    dot.classList.remove('w-2', 'bg-slate-300');
+                    dot.classList.add('w-8', 'bg-orange-500');
+                }
+            }
+        }
+
+        function selectPersona(persona) {
+            currentPersona = persona;
+            
+            // Update buttons
+            const personas = ['weekend', 'commuter', 'value', 'enthusiast'];
+            personas.forEach(p => {
+                const btn = document.getElementById('persona-' + p);
+                if (p === persona) {
+                    btn.className = 'persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-orange-500 bg-orange-50 text-orange-900';
+                } else {
+                    btn.className = 'persona-btn flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-slate-200 text-slate-700';
+                }
+            });
+
+            // Update Card 1 persona matches
+            document.getElementById('match-weekend').classList.add('hidden');
+            document.getElementById('match-commuter').classList.add('hidden');
+            document.getElementById('match-value').classList.add('hidden');
+            document.getElementById('match-enthusiast').classList.add('hidden');
+            document.getElementById('match-' + persona).classList.remove('hidden');
+
+            // Update Card 2 title and content
+            const title = document.getElementById('card2-title');
+            const weekendDay = document.getElementById('day-weekend');
+            const commuterDay = document.getElementById('day-commuter');
+            
+            if (persona === 'weekend') {
+                title.textContent = 'Card 2: Your Saturday on This Bike';
+                weekendDay.classList.remove('hidden');
+                commuterDay.classList.add('hidden');
+            } else if (persona === 'commuter') {
+                title.textContent = 'Card 2: Your Monday on This Bike';
+                weekendDay.classList.add('hidden');
+                commuterDay.classList.remove('hidden');
+            } else {
+                title.textContent = 'Card 2: A Day On This Bike';
+                weekendDay.classList.remove('hidden');
+                commuterDay.classList.add('hidden');
+            }
+        }
+
+        // Initialize
+        console.log('All 12 cards loaded! Cards 1-4 expanded by default.');
+    </script>
+</body>
+</html>

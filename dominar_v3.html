@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bajaj Dominar 250 - Should You Buy It?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-elevated: #f1f5f9;
+            --accent-orange: #f97316;
+            --accent-orange-dim: #ea580c;
+            --accent-green: #16a34a;
+            --accent-yellow: #ca8a04;
+            --accent-red: #dc2626;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-accent: #cbd5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                #ffffff 0%,
+                #f8fafc 50%,
+                #eef2f7 100%
+            );
+            z-index: 0;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(249,115,22,0.12);
+            border: 1px solid rgba(249,115,22,0.35);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title span {
+            color: var(--accent-orange);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-price {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .price-tag {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .price-note {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Navigation Pills */
+        .nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248,250,252,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem;
+        }
+
+        .nav-pills {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-pills::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            flex-shrink: 0;
+            padding: 0.625rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border: 1px solid var(--border-subtle);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-pill:hover {
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+        }
+
+        .nav-pill.active {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            color: var(--bg-dark);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+        }
+
+        /* Card Base Styles */
+        .question-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            border-color: var(--border-accent);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-number {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-orange);
+            color: var(--bg-dark);
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-question {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.3;
+        }
+
+        .card-chevron {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .question-card.expanded .card-chevron {
+            transform: rotate(180deg);
+        }
+
+        .card-body {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .question-card.expanded .card-body {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card 1 - Quiz Styles */
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border: 2px solid var(--border-subtle);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent-orange);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--accent-orange);
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .quiz-option-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-option-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .quiz-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .match-score {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .score-circle {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .score-high { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); }
+        .score-medium { background: rgba(234, 179, 8, 0.2); color: var(--accent-yellow); }
+        .score-low { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+
+        .score-label {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .score-detail {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .expert-consensus {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .consensus-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .consensus-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .consensus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border-radius: 0.5rem;
+        }
+
+        .consensus-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .consensus-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .consensus-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Card 2 - Scenario Tabs */
+        .scenario-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.5rem;
+        }
+
+        .scenario-tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .scenario-tab:hover {
+            color: var(--text-secondary);
+        }
+
+        .scenario-tab.active {
+            background: var(--accent-orange);
+            color: var(--bg-dark);
+        }
+
+        .scenario-content {
+            display: none;
+        }
+
+        .scenario-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-orange), var(--border-subtle));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -1.625rem;
+            top: 0.25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 3px solid var(--accent-orange);
+        }
+
+        .timeline-time {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent-orange);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .point-good { color: var(--accent-green); }
+        .point-warn { color: var(--accent-yellow); }
+        .point-bad { color: var(--accent-red); }
+
+        .timeline-quote {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border-radius: 0.5rem;
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .scenario-summary {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .summary-item-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .summary-item-value {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.25rem;
+        }
+
+        /* Card 3 - Calculator */
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .calc-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .calc-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .calc-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .calc-input {
+            padding: 0.75rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+        }
+
+        .calc-slider-group {
+            grid-column: span 2;
+        }
+
+        .calc-slider-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-elevated);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-orange);
+            cursor: pointer;
+        }
+
+        .calc-results {
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+            border-top: 2px solid var(--accent-orange);
+        }
+
+        .result-label {
+            color: var(--text-secondary);
+        }
+
+        .result-value {
+            font-weight: 600;
+        }
+
+        .result-total {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+        }
+
+        .mileage-breakdown {
+            margin-top: 1.5rem;
+        }
+
+        .mileage-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .mileage-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .mileage-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mileage-bar-label {
+            width: 120px;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .mileage-bar-track {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .mileage-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .mileage-bar-value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        /* Card 4 - Split Screen */
+        .split-view {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .split-view {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .split-panel {
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .panel-icon {
+            font-size: 1.5rem;
+        }
+
+        .panel-title {
+            font-weight: 600;
+        }
+
+        .feel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feel-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feel-icon {
+            flex-shrink: 0;
+            font-size: 0.875rem;
+        }
+
+        .feel-content {
+            flex: 1;
+        }
+
+        .feel-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.125rem;
+        }
+
+        .feel-desc {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        /* Card 5 - Timeline */
+        .ownership-timeline {
+            position: relative;
+        }
+
+        .ot-phase {
+            padding: 1.25rem;
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--border-subtle);
+            transition: border-color 0.2s ease;
+        }
+
+        .ot-phase:hover {
+            border-left-color: var(--accent-orange);
+        }
+
+        .ot-phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .ot-phase-title {
+            font-weight: 600;
+        }
+
+        .ot-phase-km {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-dark);
+            border-radius: 0.25rem;
+            color: var(--text-muted);
+        }
+
+        .ot-phase-mood {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .ot-phase-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .mod-suggestions {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 0.75rem;
+        }
+
+        .mod-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mod-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 640px) {
+            .mod-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mod-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-card);
+            border-radius: 0.5rem;
+        }
+
+        .mod-percent {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-orange);
+            color: var(--bg-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 0.375rem;
+            flex-shrink: 0;
+        }
+
+        .mod-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mod-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .mod-price {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+        }
+
+        /* Card 6 - Verdict */
+        .surprise-facts {
+            margin-bottom: 1.5rem;
+        }
+
+        .surprise-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .surprise-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .surprise-item {
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        .surprise-expected {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .surprise-reality {
+            font-weight: 500;
+            color: var(--accent-green);
+        }
+
+        .comparison-matrix {
+            margin-top: 1.5rem;
+        }
+
+        .matrix-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .matrix-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .matrix-card {
+            padding: 1.25rem;
+            background: var(--bg-elevated);
+            border-radius: 0.75rem;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .matrix-card.recommended {
+            border-color: var(--accent-orange);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, var(--bg-elevated) 100%);
+        }
+
+        .matrix-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .matrix-bike-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1rem;
+        }
+
+        .matrix-badge {
+            font-size: 0.6875rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--accent-orange);
+            color: var(--bg-dark);
+            border-radius: 0.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .matrix-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .final-verdict {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-accent);
+            text-align: center;
+        }
+
+        .verdict-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .verdict-text {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-dim) 100%);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-subtitle {
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            font-family: inherit;
+        }
+
+        .cta-btn-primary {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--bg-dark);
+            border: 2px solid var(--bg-dark);
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        /* Utilities */
+        .text-green { color: var(--accent-green); }
+        .text-yellow { color: var(--accent-yellow); }
+        .text-red { color: var(--accent-red); }
+        .text-orange { color: var(--accent-orange); }
+
+        .hidden { display: none !important; }
+    
+/* Floating Specs Button */
+.specs-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--accent-orange);
+  color: var(--bg-dark);
+  border: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 200;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* Specs Drawer */
+.specs-drawer {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-card);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  z-index: 300;
+  overflow-y: auto;
+}
+
+.specs-drawer.open {
+  transform: translateY(0);
+}
+
+.specs-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-elevated);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.specs-content {
+  padding: 1.5rem;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  vertical-align: top;
+}
+
+.specs-table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.specs-features ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.specs-features li {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+
+.hero-title {
+  color: var(--text-primary);
+}
+
+.hero-title span {
+  color: var(--accent-orange);
+}
+
+.hero-subtitle {
+  color: var(--text-secondary);
+}
+
+.price-tag {
+  color: var(--text-primary);
+}
+
+.price-note {
+  color: var(--text-muted);
+}
+
+
+</style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>⚡</span>
+                250cc Tourer
+            </div>
+            <h1 class="hero-title">Bajaj Dominar <span>250</span></h1>
+            <p class="hero-subtitle">Premium touring capability at a budget price. 6 questions to decide if it's right for you.</p>
+            <div class="hero-price">
+                <span class="price-tag">₹1.6L – ₹1.85L</span>
+                <span class="price-note">Ex-showroom, New Delhi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-pills">
+            <button class="nav-pill active" data-card="1">Is This For Me?</button>
+            <button class="nav-pill" data-card="2">Typical Day</button>
+            <button class="nav-pill" data-card="3">True Cost</button>
+            <button class="nav-pill" data-card="4">Ride Feel</button>
+            <button class="nav-pill" data-card="5">Before You Buy</button>
+            <button class="nav-pill" data-card="6">Final Verdict</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Card 1: Is This Bike For Me? -->
+        <article class="question-card expanded" id="card-1">
+            <div class="card-header" onclick="toggleCard(1)">
+                <div class="card-header-left">
+                    <div class="card-number">1</div>
+                    <h2 class="card-question">Is This Bike For Me?</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="quiz-container">
+                    <div class="quiz-question">What's your primary riding style?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectQuizOption(this, 'touring', 92)" data-value="touring">
+                            <div class="quiz-option-icon">🛣️</div>
+                            <div class="quiz-option-text">Weekend Tours<br><small style="color:var(--text-muted)">200-500km rides</small></div>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, 'commute', 58)" data-value="commute">
+                            <div class="quiz-option-icon">🏙️</div>
+                            <div class="quiz-option-text">Daily Commute<br><small style="color:var(--text-muted)">25-65km office runs</small></div>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, 'mixed', 75)" data-value="mixed">
+                            <div class="quiz-option-icon">⚖️</div>
+                            <div class="quiz-option-text">Mixed Use<br><small style="color:var(--text-muted)">Weekday city, weekend escape</small></div>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, 'sport', 65)" data-value="sport">
+                            <div class="quiz-option-icon">⚡</div>
+                            <div class="quiz-option-text">Performance<br><small style="color:var(--text-muted)">Spirited riding</small></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-result hidden" id="quiz-result">
+                        <div class="match-score">
+                            <div class="score-circle score-high" id="score-circle">
+                                <span id="score-value">92%</span>
+                            </div>
+                            <div>
+                                <div class="score-label" id="score-label">Excellent Match</div>
+                                <div class="score-detail" id="score-detail">Built for riders like you</div>
+                            </div>
+                        </div>
+                        <div id="match-explanation">
+                            <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                                <strong style="color: var(--text-primary);">Why this score:</strong> 70% of 850+ Dominar 250 owners are weekend tourers who specifically chose this bike for long-distance capability. The bike excels at exactly what you want to do.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="expert-consensus">
+                        <div class="consensus-title">
+                            <span>🤝</span> What Owners & Experts Agree On
+                        </div>
+                        <div class="consensus-grid">
+                            <div class="consensus-item">
+                                <span class="consensus-icon text-green">✓</span>
+                                <span class="consensus-text"><strong>Engine refinement</strong> – Best-in-class smoothness</span>
+                            </div>
+                            <div class="consensus-item">
+                                <span class="consensus-icon text-green">✓</span>
+                                <span class="consensus-text"><strong>Touring comfort</strong> – Unmatched in segment</span>
+                            </div>
+                            <div class="consensus-item">
+                                <span class="consensus-icon text-green">✓</span>
+                                <span class="consensus-text"><strong>Value for money</strong> – Premium features at budget price</span>
+                            </div>
+                            <div class="consensus-item">
+                                <span class="consensus-icon text-yellow">⚠</span>
+                                <span class="consensus-text"><strong>180kg weight</strong> – Great on highway, effort in parking</span>
+                            </div>
+                            <div class="consensus-item">
+                                <span class="consensus-icon text-red">✗</span>
+                                <span class="consensus-text"><strong>City riding</strong> – Tolerable but not ideal (both rate 2-2.5/5)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 2: What Will My Typical Day Look Like? -->
+        <article class="question-card" id="card-2">
+            <div class="card-header" onclick="toggleCard(2)">
+                <div class="card-header-left">
+                    <div class="card-number">2</div>
+                    <h2 class="card-question">What Will My Typical Day Look Like?</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="scenario-tabs">
+                    <button class="scenario-tab active" onclick="switchScenario('touring')">🛣️ Highway Tour</button>
+                    <button class="scenario-tab" onclick="switchScenario('commute')">🏙️ City Commute</button>
+                    <button class="scenario-tab" onclick="switchScenario('weekend')">🏔️ Weekend Escape</button>
+                </div>
+
+                <!-- Touring Scenario -->
+                <div class="scenario-content active" id="scenario-touring">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">6:00 AM – Highway Start</div>
+                            <div class="timeline-title">📍 KM 0-180 • Open Road</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ Rock-solid stability at 90 kmph</span>
+                                <span class="point-good">✓ Zero lower back pain at 4 hours</span>
+                                <span class="point-warn">⚠ Wind buffeting starts above 100 kmph</span>
+                            </div>
+                            <div class="timeline-quote">"Windshield adequate but not great" – Owner review</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">12:00 PM – Lunch Stop</div>
+                            <div class="timeline-title">⛽ KM 180 • Refuel Reality</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ 180km done, 320km left in tank</span>
+                                <span class="point-good">✓ 40-42 kmpl at highway cruise</span>
+                            </div>
+                            <div class="timeline-quote">"500km range routine" – Long-distance tourer</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">5:00 PM – Mountain Twisties</div>
+                            <div class="timeline-title">🏔️ Ghat Section</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ Corners better than expected</span>
+                                <span class="point-warn">⚠ Weight noticeable in tight hairpins</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">9:00 PM – Destination</div>
+                            <div class="timeline-title">🅿️ Hotel Parking</div>
+                            <div class="timeline-points">
+                                <span class="point-warn">⚠ 180kg = Effort to maneuver into spot</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scenario-summary">
+                        <div>
+                            <div class="summary-item-label">Comfort Rating</div>
+                            <div class="summary-item-value text-green">9/10</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Avg. Mileage</div>
+                            <div class="summary-item-value">40-42 kmpl</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Verdict</div>
+                            <div class="summary-item-value text-green">Dominates</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commute Scenario -->
+                <div class="scenario-content" id="scenario-commute">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">8:00 AM – Dense Traffic</div>
+                            <div class="timeline-title">🚦 City Crawl</div>
+                            <div class="timeline-points">
+                                <span class="point-warn">⚠ Handlebar flip-flops at slow speeds</span>
+                                <span class="point-warn">⚠ 180kg feels heavy in stop-go</span>
+                                <span class="point-good">✓ Tractable engine, 3rd gear at 30 kmph</span>
+                            </div>
+                            <div class="timeline-quote">"Front-heavy steering is city's weak point" – Daily commuter</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">9:00 AM – Expressway Stretch</div>
+                            <div class="timeline-title">🛣️ Ring Road</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ This is where it wakes up</span>
+                                <span class="point-good">✓ Planted, stable, confident</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">6:30 PM – Office Parking</div>
+                            <div class="timeline-title">🅿️ Tight Spot</div>
+                            <div class="timeline-points">
+                                <span class="point-bad">✗ Takes real effort to maneuver</span>
+                                <span class="point-bad">✗ Shorter riders struggle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scenario-summary">
+                        <div>
+                            <div class="summary-item-label">Comfort Rating</div>
+                            <div class="summary-item-value text-yellow">5/10</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Avg. Mileage</div>
+                            <div class="summary-item-value">30-35 kmpl</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Verdict</div>
+                            <div class="summary-item-value text-yellow">Struggles</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekend Scenario -->
+                <div class="scenario-content" id="scenario-weekend">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">Saturday 5:00 AM</div>
+                            <div class="timeline-title">🌅 Early Start, Empty Roads</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ Perfect conditions for this bike</span>
+                                <span class="point-good">✓ Deep exhaust note, no vibrations</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">NH48 at 3:00 AM Feel</div>
+                            <div class="timeline-title">🛣️ Empty Highway Stretch</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ Rock-solid stability</span>
+                                <span class="point-good">✓ 500km range, zero fatigue</span>
+                                <span class="point-good">✓ Better than everything in segment</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-time">Destination: Manali-Leh</div>
+                            <div class="timeline-title">🏔️ High Altitude Tour</div>
+                            <div class="timeline-points">
+                                <span class="point-good">✓ Touring-focused, luggage ready</span>
+                                <span class="point-good">✓ Reliable, proven on hard routes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scenario-summary">
+                        <div>
+                            <div class="summary-item-label">Comfort Rating</div>
+                            <div class="summary-item-value text-green">10/10</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Avg. Mileage</div>
+                            <div class="summary-item-value">40-45 kmpl</div>
+                        </div>
+                        <div>
+                            <div class="summary-item-label">Verdict</div>
+                            <div class="summary-item-value text-green">Built For This</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 3: What Will It Actually Cost? -->
+        <article class="question-card" id="card-3">
+            <div class="card-header" onclick="toggleCard(3)">
+                <div class="card-header-left">
+                    <div class="card-number">3</div>
+                    <h2 class="card-question">What Will It Actually Cost?</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="calculator">
+                    <div class="calc-inputs">
+                        <div class="calc-input-group">
+                            <label class="calc-label">Monthly KM</label>
+                            <input type="number" class="calc-input" id="monthly-km" value="1200" onchange="calculateCosts()">
+                        </div>
+                        <div class="calc-input-group">
+                            <label class="calc-label">Fuel Price (₹/L)</label>
+                            <input type="number" class="calc-input" id="fuel-price" value="105" onchange="calculateCosts()">
+                        </div>
+                        <div class="calc-input-group calc-slider-group">
+                            <div class="calc-slider-header">
+                                <span class="calc-label">Riding Style</span>
+                                <span class="calc-label" id="style-label">Mixed (38 kmpl)</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="riding-style" min="30" max="45" value="38" onchange="calculateCosts()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                <span>Aggressive</span>
+                                <span>Controlled</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mileage-breakdown">
+                        <div class="mileage-title">Real Mileage by Scenario</div>
+                        <div class="mileage-bars">
+                            <div class="mileage-bar-item">
+                                <span class="mileage-bar-label">City Aggressive</span>
+                                <div class="mileage-bar-track">
+                                    <div class="mileage-bar-fill" style="width: 66%; background: var(--accent-red);"></div>
+                                </div>
+                                <span class="mileage-bar-value text-red">30-35</span>
+                            </div>
+                            <div class="mileage-bar-item">
+                                <span class="mileage-bar-label">City Controlled</span>
+                                <div class="mileage-bar-track">
+                                    <div class="mileage-bar-fill" style="width: 95%; background: var(--accent-yellow);"></div>
+                                </div>
+                                <span class="mileage-bar-value text-yellow">43-45</span>
+                            </div>
+                            <div class="mileage-bar-item">
+                                <span class="mileage-bar-label">Highway Cruise</span>
+                                <div class="mileage-bar-track">
+                                    <div class="mileage-bar-fill" style="width: 89%; background: var(--accent-green);"></div>
+                                </div>
+                                <span class="mileage-bar-value text-green">40-42</span>
+                            </div>
+                            <div class="mileage-bar-item">
+                                <span class="mileage-bar-label">Highway Spirited</span>
+                                <div class="mileage-bar-track">
+                                    <div class="mileage-bar-fill" style="width: 78%; background: var(--accent-orange);"></div>
+                                </div>
+                                <span class="mileage-bar-value text-orange">35-38</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.75rem; font-style: italic;">
+                            "Same bike, 15 kmpl spread depending on riding style" – Owner consensus
+                        </p>
+                    </div>
+
+                    <div class="calc-results">
+                        <div style="font-weight: 600; margin-bottom: 1rem;">Monthly Breakdown</div>
+                        <div class="result-row">
+                            <span class="result-label">Fuel (<span id="km-display">1200</span>km @ <span id="mileage-display">38</span>kmpl)</span>
+                            <span class="result-value" id="fuel-cost">₹3,316</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Service (avg. over 5000km)</span>
+                            <span class="result-value">₹850</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Insurance (comprehensive)</span>
+                            <span class="result-value">₹625</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label result-total">Total Monthly</span>
+                            <span class="result-value result-total" id="total-monthly">₹4,791</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg-elevated); border-radius: 0.75rem; padding: 1.25rem; margin-top: 1rem;">
+                        <div style="font-weight: 600; margin-bottom: 1rem;">⚠️ Hidden First-Year Costs</div>
+                        <div style="display: grid; gap: 0.5rem; font-size: 0.875rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-secondary);">Front brake pads (@ 5-6k km)</span>
+                                <span>₹800-1,200</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-secondary);">Chain set (@ 12k km)</span>
+                                <span>₹2,500-3,500</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);">
+                                <span style="color: var(--accent-green);">💡 After Year 1:</span>
+                                <span style="color: var(--accent-green);">Costs drop significantly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 4: How Does It Feel to Ride? -->
+        <article class="question-card" id="card-4">
+            <div class="card-header" onclick="toggleCard(4)">
+                <div class="card-header-left">
+                    <div class="card-number">4</div>
+                    <h2 class="card-question">How Does It Feel to Ride?</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="split-view">
+                    <div class="split-panel">
+                        <div class="panel-header">
+                            <span class="panel-icon">🏍️</span>
+                            <span class="panel-title">Solo Rider</span>
+                        </div>
+                        <div class="feel-list">
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Heat Management</div>
+                                    <div class="feel-desc">Liquid cooling = minimal heat. Better than air-cooled 250s.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-yellow">⚠</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Wind Protection</div>
+                                    <div class="feel-desc">Adequate below 100 kmph. Buffeting starts above.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Seating Position</div>
+                                    <div class="feel-desc">Upright, relaxed. 13-hour days are possible.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Exhaust Note</div>
+                                    <div class="feel-desc">Deep, pleasing, not obnoxious.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Vibrations</div>
+                                    <div class="feel-desc">Almost negligible at highway speeds.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-yellow">⚠</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Weight Feel</div>
+                                    <div class="feel-desc">Moving: Planted. Stationary: Heavy, requires muscle.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-panel">
+                        <div class="panel-header">
+                            <span class="panel-icon">👥</span>
+                            <span class="panel-title">With Pillion</span>
+                        </div>
+                        <div class="feel-list">
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Short Rides (&lt;100km)</div>
+                                    <div class="feel-desc">Better comfort than competitors. Good grabrails.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-yellow">⚠</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Long Rides (200km+)</div>
+                                    <div class="feel-desc">Seat becomes hard after 2-3 hours.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-yellow">⚠</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Luggage Trade-off</div>
+                                    <div class="feel-desc">Luggage vs Pillion = Planning needed.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-green">✓</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Touring Reality</div>
+                                    <div class="feel-desc">Many successful 2-up tours documented.</div>
+                                </div>
+                            </div>
+                            <div class="feel-item">
+                                <span class="feel-icon text-yellow">⚠</span>
+                                <div class="feel-content">
+                                    <div class="feel-title">Mileage Impact</div>
+                                    <div class="feel-desc">Range drops to 35-38 kmpl 2-up.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 5: What Do I Need to Know Before Buying? -->
+        <article class="question-card" id="card-5">
+            <div class="card-header" onclick="toggleCard(5)">
+                <div class="card-header-left">
+                    <div class="card-number">5</div>
+                    <h2 class="card-question">What Do I Need to Know Before Buying?</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="ownership-timeline">
+                    <div class="ot-phase" style="border-left-color: var(--accent-red);">
+                        <div class="ot-phase-header">
+                            <div class="ot-phase-title">Phase 1: "What did I buy?"</div>
+                            <span class="ot-phase-km">0-1000 km</span>
+                        </div>
+                        <div class="ot-phase-mood">"Buyer's remorse common here"</div>
+                        <div class="ot-phase-points">
+                            <span class="text-yellow">⚠ Suspension feels agonizingly stiff</span>
+                            <span class="text-yellow">⚠ Engine feels tight, not free-revving</span>
+                            <span style="color: var(--text-muted);">💡 This is normal – needs break-in</span>
+                        </div>
+                    </div>
+
+                    <div class="ot-phase" style="border-left-color: var(--accent-yellow);">
+                        <div class="ot-phase-header">
+                            <div class="ot-phase-title">Phase 2: "Oh, it's improving!"</div>
+                            <span class="ot-phase-km">1000-3000 km</span>
+                        </div>
+                        <div class="ot-phase-mood">"The transformation begins"</div>
+                        <div class="ot-phase-points">
+                            <span class="text-green">✓ Suspension becoming compliant</span>
+                            <span class="text-green">✓ Engine feeling smoother</span>
+                        </div>
+                    </div>
+
+                    <div class="ot-phase" style="border-left-color: var(--accent-green);">
+                        <div class="ot-phase-header">
+                            <div class="ot-phase-title">Phase 3: "Now I get it!"</div>
+                            <span class="ot-phase-km">3000-5000 km</span>
+                        </div>
+                        <div class="ot-phase-mood">"The bike you thought you bought"</div>
+                        <div class="ot-phase-points">
+                            <span class="text-green">✓ Suspension comfortable for tours</span>
+                            <span class="text-green">✓ Engine smooth, talky above 5k rpm</span>
+                        </div>
+                    </div>
+
+                    <div class="ot-phase" style="border-left-color: var(--accent-orange);">
+                        <div class="ot-phase-header">
+                            <div class="ot-phase-title">Phase 4: "The 5000km Gotcha"</div>
+                            <span class="ot-phase-km">~5000 km</span>
+                        </div>
+                        <div class="ot-phase-mood">"First real wear items"</div>
+                        <div class="ot-phase-points">
+                            <span class="text-yellow">⚠ Front brake pads almost done (₹800-1,200)</span>
+                            <span class="text-yellow">⚠ Chain showing wear, check tension</span>
+                        </div>
+                    </div>
+
+                    <div class="ot-phase" style="border-left-color: var(--accent-green);">
+                        <div class="ot-phase-header">
+                            <div class="ot-phase-title">Phase 5: "Trouble-free ownership"</div>
+                            <span class="ot-phase-km">10,000+ km</span>
+                        </div>
+                        <div class="ot-phase-mood">"King of build quality in category"</div>
+                        <div class="ot-phase-points">
+                            <span class="text-green">✓ Many owners report 10k+ km without issues</span>
+                            <span class="text-green">✓ Reliability becomes the standout feature</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mod-suggestions">
+                    <div class="mod-title">
+                        <span>🔧</span> What 850+ Owners Add (And Why)
+                    </div>
+                    <div class="mod-grid">
+                        <div class="mod-item">
+                            <div class="mod-percent">68%</div>
+                            <div class="mod-info">
+                                <div class="mod-name">Handlebar Risers</div>
+                                <div class="mod-price">₹1,500-2,500 • "Stock bars too low"</div>
+                            </div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-percent">54%</div>
+                            <div class="mod-info">
+                                <div class="mod-name">Seat Padding</div>
+                                <div class="mod-price">₹800-1,500 • "Hard after 200km"</div>
+                            </div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-percent">47%</div>
+                            <div class="mod-info">
+                                <div class="mod-name">Luggage (Tank+Tail)</div>
+                                <div class="mod-price">₹3,500-5,000 • "No panniers needed"</div>
+                            </div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-percent">41%</div>
+                            <div class="mod-info">
+                                <div class="mod-name">Crash Guards</div>
+                                <div class="mod-price">₹2,500-4,000 • "Protect ₹1.8L investment"</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;">
+                        💡 Pattern: Most mods are touring-focused (comfort + utility), not performance.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 6: Final Verdict vs. Rivals -->
+        <article class="question-card" id="card-6">
+            <div class="card-header" onclick="toggleCard(6)">
+                <div class="card-header-left">
+                    <div class="card-number">6</div>
+                    <h2 class="card-question">Final Verdict vs. Rivals</h2>
+                </div>
+                <svg class="card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="card-body">
+                <div class="surprise-facts">
+                    <div class="surprise-title">
+                        <span>⚡</span> 3 Things That Surprised Owners
+                    </div>
+                    <div class="surprise-grid">
+                        <div class="surprise-item">
+                            <div class="surprise-expected">Expected: "180kg = slow corners"</div>
+                            <div class="surprise-reality">✓ Reality: Handles better than expected. 19" wheel + long wheelbase help.</div>
+                        </div>
+                        <div class="surprise-item">
+                            <div class="surprise-expected">Expected: "Decent mileage for a 250"</div>
+                            <div class="surprise-reality">✓ Reality: Rivals 150cc commuters. 35-47 kmpl range.</div>
+                        </div>
+                        <div class="surprise-item">
+                            <div class="surprise-expected">Expected: "Entry bike, will upgrade later"</div>
+                            <div class="surprise-reality">✓ Reality: Many DOWNGRADE from Duke 390, RE 650. Reliability wins.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-matrix">
+                    <div class="matrix-title">Quick Decision Guide</div>
+                    <div class="matrix-cards">
+                        <div class="matrix-card recommended">
+                            <div class="matrix-card-header">
+                                <span class="matrix-bike-name">Dominar 250</span>
+                                <span class="matrix-badge">Best For Touring</span>
+                            </div>
+                            <div class="matrix-points">
+                                <span class="text-green">✓ 70%+ riding is highways/tours</span>
+                                <span class="text-green">✓ Value matters – premium at budget</span>
+                                <span class="text-green">✓ Comfort over 200km+ is priority</span>
+                                <span class="text-green">✓ Reliability > Brand badge</span>
+                                <span class="text-yellow">⚠ Okay tolerating city weight</span>
+                            </div>
+                        </div>
+
+                        <div class="matrix-card">
+                            <div class="matrix-card-header">
+                                <span class="matrix-bike-name">Gixxer 250</span>
+                            </div>
+                            <div class="matrix-points">
+                                <span>✓ 50%+ riding is city commuting</span>
+                                <span>✓ Want lighter, flickable bike</span>
+                                <span>✓ Parking maneuverability matters</span>
+                                <span>✓ Prefer sportier styling</span>
+                                <span class="text-yellow">⚠ Less touring comfort</span>
+                            </div>
+                        </div>
+
+                        <div class="matrix-card">
+                            <div class="matrix-card-header">
+                                <span class="matrix-bike-name">V-Strom SX</span>
+                            </div>
+                            <div class="matrix-points">
+                                <span>✓ ADV styling + upright ergonomics</span>
+                                <span>✓ Fuel efficiency top priority (45kmpl)</span>
+                                <span>✓ Better windshield for highways</span>
+                                <span>✓ Smooth engine preferred</span>
+                                <span class="text-yellow">⚠ Stiff suspension, service network</span>
+                            </div>
+                        </div>
+
+                        <div class="matrix-card">
+                            <div class="matrix-card-header">
+                                <span class="matrix-bike-name">KTM 250 Duke</span>
+                            </div>
+                            <div class="matrix-points">
+                                <span>✓ Want most power (30 bhp)</span>
+                                <span>✓ Aggressive riding / track days</span>
+                                <span>✓ Brand badge & styling priority</span>
+                                <span>✓ Willing to pay ₹60k premium</span>
+                                <span class="text-yellow">⚠ Less comfortable for touring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-verdict">
+                    <div class="verdict-icon">💡</div>
+                    <div class="verdict-text">
+                        <strong>The Honest Truth:</strong> Dominar 250 is the best TOURER in 250cc. It's NOT the best city bike, or fastest, or most prestigious. But for weekend warriors who commute 5 days to tour 2 days, nothing beats it for value.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h3 class="cta-title">Ready to Decide?</h3>
+            <p class="cta-subtitle">Get complete specs, dealer locations, and on-road pricing</p>
+            <div class="cta-buttons">
+                <button class="cta-btn cta-btn-primary">Check On-Road Price</button>
+                <button class="cta-btn cta-btn-secondary">Compare All Rivals</button>
+            </div>
+        </section>
+    
+<!-- Specs Drawer -->
+<div class="specs-drawer" id="specsDrawer">
+  <div class="specs-header">
+    <h3>Bajaj Dominar 250 — Specs that Matter</h3>
+    <button class="close-btn" onclick="toggleSpecs()">✕</button>
+  </div>
+
+  <div class="specs-content">
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Spec</th>
+          <th>Official Number</th>
+          <th>What it Means in Real Life</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Engine</td><td>248.77 cc, Liquid-cooled</td><td>Smoother long rides, less heat stress in traffic</td></tr>
+        <tr><td>Power</td><td>26.6 PS</td><td>Effortless 90–100 km/h cruising</td></tr>
+        <tr><td>Torque</td><td>23.5 Nm</td><td>Strong mid-range, fewer gear changes</td></tr>
+        <tr><td>Kerb Weight</td><td>180 kg</td><td>Highway stability, heavy in parking</td></tr>
+        <tr><td>Seat Height</td><td>800 mm</td><td>Accessible for most riders</td></tr>
+        <tr><td>Fuel Tank</td><td>13 L</td><td>450–500 km real touring range</td></tr>
+        <tr><td>Mileage</td><td>35 kmpl (ARAI)</td><td>40+ highway, 30–35 city</td></tr>
+        <tr><td>Suspension</td><td>USD + Mono-shock</td><td>Stiff initially, great on highways later</td></tr>
+        <tr><td>Brakes</td><td>300mm Disc, Dual ABS</td><td>Confident braking when loaded</td></tr>
+        <tr><td>Wheelbase</td><td>1453 mm</td><td>Stability > agility</td></tr>
+      </tbody>
+    </table>
+
+    <div class="specs-features">
+      <h4>Key Features</h4>
+      <ul>
+        <li>✔ Slipper clutch</li>
+        <li>✔ Full LED lighting</li>
+        <li>✔ USD forks</li>
+        <li>✔ Dual-channel ABS</li>
+        <li>✔ Touring-friendly ergonomics</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<button class="specs-fab" onclick="toggleSpecs()">📊 See Specs</button>
+
+</main>
+
+    <script>
+        // Card toggle functionality
+        function toggleCard(cardNum) {
+            const card = document.getElementById(`card-${cardNum}`);
+            const wasExpanded = card.classList.contains('expanded');
+            
+            // Toggle current card
+            card.classList.toggle('expanded');
+            
+            // Update nav pill
+            updateNavPills(cardNum, !wasExpanded);
+        }
+
+        // Update nav pills based on expanded cards
+        function updateNavPills(activeCard, isExpanded) {
+            const pills = document.querySelectorAll('.nav-pill');
+            pills.forEach((pill, index) => {
+                if (index + 1 === activeCard && isExpanded) {
+                    pill.classList.add('active');
+                } else if (index + 1 === activeCard && !isExpanded) {
+                    pill.classList.remove('active');
+                }
+            });
+        }
+
+        // Nav pill click handler
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+            pill.addEventListener('click', function() {
+                const cardNum = parseInt(this.dataset.card);
+                const card = document.getElementById(`card-${cardNum}`);
+                
+                // Expand card if not already expanded
+                if (!card.classList.contains('expanded')) {
+                    card.classList.add('expanded');
+                }
+                
+                // Scroll to card
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active pill
+                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Quiz functionality
+        function selectQuizOption(element, value, matchScore) {
+            // Remove selected class from all options
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Show result
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            // Update score
+            const scoreCircle = document.getElementById('score-circle');
+            const scoreValue = document.getElementById('score-value');
+            const scoreLabel = document.getElementById('score-label');
+            const scoreDetail = document.getElementById('score-detail');
+            const explanation = document.getElementById('match-explanation');
+            
+            scoreValue.textContent = matchScore + '%';
+            
+            // Update styling based on score
+            scoreCircle.classList.remove('score-high', 'score-medium', 'score-low');
+            if (matchScore >= 75) {
+                scoreCircle.classList.add('score-high');
+                scoreLabel.textContent = 'Excellent Match';
+                scoreDetail.textContent = 'This bike was built for you';
+            } else if (matchScore >= 60) {
+                scoreCircle.classList.add('score-medium');
+                scoreLabel.textContent = 'Good Match';
+                scoreDetail.textContent = 'Works well but with trade-offs';
+            } else {
+                scoreCircle.classList.add('score-low');
+                scoreLabel.textContent = 'Partial Match';
+                scoreDetail.textContent = 'Consider alternatives';
+            }
+            
+            // Update explanation based on selection
+            const explanations = {
+                touring: '<strong style="color: var(--text-primary);">Why this score:</strong> 70% of 850+ Dominar 250 owners are weekend tourers who specifically chose this bike for long-distance capability. The bike excels at exactly what you want to do.',
+                commute: '<strong style="color: var(--text-primary);">Why this score:</strong> The 180kg weight and front-heavy steering make city commuting tolerable but not ideal. Both owners and experts rate city usability 2-2.5/5. Consider lighter options.',
+                mixed: '<strong style="color: var(--text-primary);">Why this score:</strong> Perfect for "5 days commute, 2 days tour" riders. You\'ll tolerate the city weight knowing weekends will reward you with touring excellence.',
+                sport: '<strong style="color: var(--text-primary);">Why this score:</strong> Good power for the segment, but 180kg and touring-focused geometry mean the Duke 250 is better for aggressive riding. This bike prioritizes comfort over agility.'
+            };
+            
+            explanation.innerHTML = `<p style="font-size: 0.875rem; color: var(--text-secondary);">${explanations[value]}</p>`;
+        }
+
+        // Scenario tabs
+        function switchScenario(scenario) {
+            // Update tabs
+            document.querySelectorAll('.scenario-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.scenario-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(`scenario-${scenario}`).classList.add('active');
+        }
+
+        // Cost calculator
+        function calculateCosts() {
+            const monthlyKm = parseInt(document.getElementById('monthly-km').value) || 1200;
+            const fuelPrice = parseInt(document.getElementById('fuel-price').value) || 105;
+            const mileage = parseInt(document.getElementById('riding-style').value) || 38;
+            
+            // Update displays
+            document.getElementById('km-display').textContent = monthlyKm;
+            document.getElementById('mileage-display').textContent = mileage;
+            
+            // Update style label
+            let styleText = 'Mixed';
+            if (mileage <= 33) styleText = 'Aggressive';
+            else if (mileage <= 38) styleText = 'Mixed';
+            else styleText = 'Controlled';
+            document.getElementById('style-label').textContent = `${styleText} (${mileage} kmpl)`;
+            
+            // Calculate fuel cost
+            const litresNeeded = monthlyKm / mileage;
+            const fuelCost = Math.round(litresNeeded * fuelPrice);
+            document.getElementById('fuel-cost').textContent = `₹${fuelCost.toLocaleString('en-IN')}`;
+            
+            // Calculate total
+            const total = fuelCost + 850 + 625;
+            document.getElementById('total-monthly').textContent = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        // Initialize calculator
+        calculateCosts();
+
+        // Intersection observer for nav highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cardNum = entry.target.id.split('-')[1];
+                    document.querySelectorAll('.nav-pill').forEach(pill => {
+                        pill.classList.toggle('active', pill.dataset.card === cardNum);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.question-card').forEach(card => observer.observe(card));
+    
+function toggleSpecs() {
+  document.getElementById('specsDrawer').classList.toggle('open');
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* ============================================
+   SOLO VS PILLION SECTION STYLES
+   ============================================
+   Split view comparison
+   ============================================ */
+
+.solo-pillion-section {
+  padding: var(--space-6) 0;
+  background: var(--surface-card);
+}
+
+.solo-pillion-header {
+  padding: 0 var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.solo-pillion-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.solo-pillion-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Split View Container */
+.split-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .split-view {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Split Panel */
+.split-panel {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+}
+
+.split-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.split-panel-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-xl);
+}
+
+.split-panel-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+/* Aspect Items */
+.aspect-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.aspect-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.aspect-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aspect-item.positive .aspect-icon {
+  color: var(--color-positive);
+}
+
+.aspect-item.warning .aspect-icon {
+  color: var(--color-warning);
+}
+
+.aspect-item.negative .aspect-icon {
+  color: var(--color-negative);
+}
+
+.aspect-content {
+  flex: 1;
+}
+
+.aspect-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.aspect-description {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: var(--leading-relaxed);
+}
